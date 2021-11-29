@@ -53,68 +53,75 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Imported Resources\UI pack\Scripts\FillValueNumber.cs" />
-    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
-    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
-    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
-    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\PlatformSpecificContent.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AlphaButtonClickMask.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\DragRigidbody.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ForcedReset.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Restarter.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\DynamicShadowSettings.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\EventSystemChecker.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleMouseRotator.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SmoothFollow.cs" />
+    <Compile Include="Assets\Imported Resources\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ObjectResetter.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\TimedObjectActivator.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\CameraRefocus.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleMouseRotator.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SmoothFollow.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\CurveControlledBob.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FollowTarget.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\TimedObjectDestructor.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\DragRigidbody.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FollowTarget.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ForcedReset.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ObjectResetter.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AlphaButtonClickMask.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Restarter.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\EventSystemChecker.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\ActivateTrigger.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\Utility\TimedObjectActivator.cs" />
-    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\Imported Resources\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleActivatorMenu.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyObject.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\Common\GradientSkyCommon.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyCamera.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Imported Resources\Platformer Tileset\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Shaders\VertexColorCamera.shader" />
     <None Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Imported Resources\Platformer Tileset\readme.txt" />
+    <None Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Shaders\VertexColorObject.shader" />
     <None Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Imported Resources\UI pack\Documentation.txt" />
     <None Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
@@ -781,6 +788,12 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
