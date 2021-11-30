@@ -59,10 +59,6 @@ public class PlayerController : MonoBehaviour
     {
         if (horizontalInput != 0)
         {
-            // flips the character
-            var scale = transform.localScale;
-            transform.localScale = new Vector3(horizontalInput > 0 ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x), scale.y, scale.z);
-
             // moves the character
             m_Rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, m_Rigidbody2D.velocity.y);
         }
