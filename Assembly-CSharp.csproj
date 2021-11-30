@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyObject.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\DynamicShadowSettings.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleMouseRotator.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
@@ -92,12 +93,14 @@
     <Compile Include="Assets\Imported Resources\Platformer Tileset\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\Common\GradientSkyCommon.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AlphaButtonClickMask.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FOVKick.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\Restarter.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyCamera.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\EventSystemChecker.cs" />
@@ -110,9 +113,7 @@
     <Compile Include="Assets\Imported Resources\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyObject.cs" />
-    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\Common\GradientSkyCommon.cs" />
-    <Compile Include="Assets\Imported Resources\Platformer Tileset\Materials\GradientSky\Scripts\GradientSkyCamera.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported Resources\Platformer Tileset\Materials\UnlitVertexColour_Alpha.shader" />
@@ -762,6 +763,12 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
@@ -788,12 +795,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
