@@ -116,6 +116,12 @@
     <Compile Include="Assets\Imported Resources\Standard Assets\Utility\SimpleActivatorMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyShooting.cs" />
     <Compile Include="Assets\Scripts\EnemyGunAiming.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\PlayerShooting.cs" />
+    <Compile Include="Assets\Scripts\PlayerBullet.cs" />
+    <Compile Include="Assets\Scripts\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerAiming.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported Resources\Platformer Tileset\Materials\UnlitVertexColour_Alpha.shader" />
