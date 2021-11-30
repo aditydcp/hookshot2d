@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D m_Rigidbody2D;
+    public float bulletSpeed = 10f;
+    public GameObject fire;
+    public Vector3 mousePos;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +33,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         GroundCheck();
         Movement();
         Respawn();
+        Attack();
     }
 
     private void GroundCheck()
@@ -73,6 +78,23 @@ public class PlayerController : MonoBehaviour
         if(transform.position.y < -10)
         {
             transform.position = new Vector2(0, 0);
+        }
+    }
+
+    private Vector3 MousePosition()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPos.z = 0;
+            GameObject bullet = GameObject.Instantiate(fire, transform.position, Quaternion.identity) as GameObject;
+            bullet.transform.SetParent(transform);
+            bullet.transform.position = Vector2.MoveTowards(bullet.transform.position, targetPos, bulletSpeed * Time.deltaTime);
         }
     }
 }
