@@ -12,7 +12,7 @@ public class EnemyShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Shoot", 1f, 1f);
+        InvokeRepeating("Shoot", 2f + Random.Range(0f, 2f), 5f + Random.Range(0f, 2f));
     }
 
     void Shoot()

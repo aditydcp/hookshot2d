@@ -40,7 +40,7 @@ public class PlayerHook : MonoBehaviour
 
             var pullDirection = (hookPosition - attacheePosition).normalized;
 
-            _attachedRigidbody.AddForce(pullDirection * Time.deltaTime * PullStrength, ForceMode2D.Impulse);
+            _attachedRigidbody.AddForce(pullDirection.normalized * Time.deltaTime * PullStrength, ForceMode2D.Impulse);
         }   
     }
 
