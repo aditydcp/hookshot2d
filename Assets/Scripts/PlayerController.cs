@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public GameObject fire;
     public Vector3 mousePos;
 
+    public ProgressBar FuelBar;
     public float MaxFuelCapacity = 100f;
     public float CurrentFuelLevel = 100f;
     public float FuelConsumptionRate = 5f;
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FuelBar.SetMaxProgress((int)MaxFuelCapacity);
+
         // set up
         groundCheck = transform.Find("GroundCheck");
         //groundCheckLeft = transform.Find("GroundCheck_left");
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FuelBar.SetCurrentProgress((int)CurrentFuelLevel);
+
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");

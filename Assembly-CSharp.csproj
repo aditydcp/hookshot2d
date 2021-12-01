@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\PlayerAiming.cs" />
     <Compile Include="Assets\Scripts\PlayerHook.cs" />
+    <Compile Include="Assets\Scripts\ProgressBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported Resources\Platformer Tileset\Materials\UnlitVertexColour_Alpha.shader" />
