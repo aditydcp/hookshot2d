@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
     public int CurrentHealth = 100;
 
     public ProgressBar HealthBar;
+    public GameObject Turret;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,14 @@ public class EnemyManager : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         CurrentHealth -= damageAmount;
+
+        if (CurrentHealth < 0 && Turret != null)
+        {
+            var TurretRigidbody = Turret.GetComponent<Rigidbody2D>();
+            TurretRigidbody.constraints = RigidbodyConstraints2D.None;
+
+            Destroy(Turret, 10f);
+        }
 
         HealthBar.SetCurrentProgress(CurrentHealth);
     }
