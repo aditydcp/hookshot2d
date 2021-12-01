@@ -19,6 +19,15 @@ public class PlayerController : MonoBehaviour
     public GameObject fire;
     public Vector3 mousePos;
 
+    public float MaxFuelCapacity = 100f;
+    public float CurrentFuelLevel = 100f;
+    public float FuelConsumptionRate = 5f;
+    public float FuelRegenerationRate = 10f;
+    public float JetpackThrust = 25f;
+    public float RefuelCooldownSeconds = 2f;
+
+    private IEnumerator _refuelCooldown = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,13 +45,14 @@ public class PlayerController : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        GroundCheck();
+        // GroundCheck();
         Movement();
         Respawn();
+        Jetpack();
         //Attack();
     }
 
-    private void GroundCheck()
+    /*private void GroundCheck()
     {
         isGrounded = false;
 
@@ -53,6 +63,67 @@ public class PlayerController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
                 isGrounded = true;
         }
+    }*/
+
+    private void Jetpack()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (_refuelCooldown != null)
+            {
+                StopCoroutine(_refuelCooldown);
+                _refuelCooldown = null;
+            }
+
+            FireJetpack();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _refuelCooldown = RefuelCooldown();
+            StartCoroutine(_refuelCooldown);
+        }
+    }
+
+    private IEnumerator RefuelCooldown()
+    {
+        yield return new WaitForSeconds(RefuelCooldownSeconds);
+
+        while (CurrentFuelLevel < MaxFuelCapacity)
+        {
+            RefuelJetpack();
+
+            yield return null;
+        }
+    }
+
+    private void FireJetpack()
+    {
+        if (CurrentFuelLevel > 0)
+        {
+            m_Rigidbody2D.AddForce(Vector2.up * Time.deltaTime * JetpackThrust, ForceMode2D.Impulse);
+
+            if (CurrentFuelLevel - FuelConsumptionRate * Time.deltaTime > 0)
+            {
+                CurrentFuelLevel -= FuelConsumptionRate * Time.deltaTime;
+            }
+            else
+            {
+                CurrentFuelLevel = 0;
+            }
+        }
+    }
+
+    private void RefuelJetpack()
+    {
+        if (CurrentFuelLevel + FuelRegenerationRate * Time.deltaTime < MaxFuelCapacity)
+        {
+            CurrentFuelLevel += FuelRegenerationRate * Time.deltaTime;
+        }
+        else
+        {
+            CurrentFuelLevel = MaxFuelCapacity;
+        }
     }
 
     private void Movement()
@@ -61,13 +132,6 @@ public class PlayerController : MonoBehaviour
         {
             // moves the character
             m_Rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, m_Rigidbody2D.velocity.y);
-        }
-
-        //if((verticalInput > 0 || Input.GetButtonDown("Jump")) && isGrounded)
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-        {
-            isGrounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         }
     }
 
