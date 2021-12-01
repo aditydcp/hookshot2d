@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public int Health = 100;
+    public int MaxHealth = 100;
+    public int CurrentHealth = 100;
+
+    public ProgressBar HealthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        HealthBar.SetMaxProgress(MaxHealth);
+        HealthBar.SetCurrentProgress(CurrentHealth);
     }
 
     // Update is called once per frame
@@ -20,6 +24,8 @@ public class EnemyManager : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        Health -= damageAmount;
+        CurrentHealth -= damageAmount;
+
+        HealthBar.SetCurrentProgress(CurrentHealth);
     }
 }
