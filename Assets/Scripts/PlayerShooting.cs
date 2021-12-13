@@ -15,6 +15,8 @@ public class PlayerShooting : MonoBehaviour
     public PlayerHook _currentGrapplingHook = null;
     public PlayerWeapon SelectedWeapon = PlayerWeapon.Gun;
 
+    public TimeManager TimeManager;
+
     public enum PlayerWeapon
     {
         Gun,
@@ -67,6 +69,15 @@ public class PlayerShooting : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SelectedWeapon = PlayerWeapon.GrapplingHook;
+        }
+
+        if (SelectedWeapon == PlayerWeapon.Gun)
+        {
+            TimeManager.EnableSlowmotion();
+        }
+        else
+        {
+            TimeManager.DisableSlowmotion();
         }
     }
 
