@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 732888101504008328}
   - component: {fileID: 732888101504008330}
   - component: {fileID: 732888101504008331}
-  - component: {fileID: 732888101504008333}
+  - component: {fileID: 7612270296491355759}
   m_Layer: 0
   m_Name: MissileTurretPivot
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &732888101504008333
+--- !u!114 &7612270296491355759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,13 +190,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 732888101504008329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab54de53aa98410458b163a35c9b139c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7343457500cddd64c9cef371efae0506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FiringPoint: {fileID: 732888099875298300}
   BulletPrefab: {fileID: 6521463241228807816, guid: 69fbbc310d2e6d54283da11a753bc208, type: 3}
   MinInitialShotDelay: 2
   InitialShotDelayVariation: 2
-  MinShootingInterval: 1
+  MinShootingInterval: 5
   ShootingIntervalVariation: 2
   BulletForce: 0

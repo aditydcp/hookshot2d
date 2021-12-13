@@ -20,6 +20,7 @@ public class EnemyManager : MonoBehaviour
     {
         HealthBar.SetMaxProgress(MaxHealth);
         HealthBar.SetCurrentProgress(CurrentHealth);
+        Turret.GetComponent<IEnemyWeapon>().StartShooting();
     }
 
     // Update is called once per frame
@@ -53,6 +54,8 @@ public class EnemyManager : MonoBehaviour
     {
         Turret = Instantiate(TurretPrefab, transform);
 
+        Turret.GetComponent<IEnemyWeapon>().StartShooting();
+
         Turret.transform.localPosition = new Vector2(0.01f, -0.87f);
     }
 
@@ -73,6 +76,8 @@ public class EnemyManager : MonoBehaviour
             TurretRigidbody.constraints = RigidbodyConstraints2D.None;
 
             StartCoroutine(Regenerate());
+
+            Turret.GetComponent<IEnemyWeapon>().StopShooting();
 
             Destroy(Turret, 10f);
 

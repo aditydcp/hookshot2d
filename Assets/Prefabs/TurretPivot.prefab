@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1434194999246481921}
   - component: {fileID: 1434194999246481923}
   - component: {fileID: 1434194999246481922}
-  - component: {fileID: 1434194999246481924}
+  - component: {fileID: 5723956483910053245}
   m_Layer: 0
   m_Name: TurretPivot
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &1434194999246481924
+--- !u!114 &5723956483910053245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +190,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434194999246481920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab54de53aa98410458b163a35c9b139c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7343457500cddd64c9cef371efae0506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FiringPoint: {fileID: 1434194998761763189}
   BulletPrefab: {fileID: 4393052516969112670, guid: 33afec5fa255da143b38c6f01a48b4dd, type: 3}
-  BulletForce: 20
+  MinInitialShotDelay: 2
+  InitialShotDelayVariation: 2
+  MinShootingInterval: 5
+  ShootingIntervalVariation: 2
+  BulletForce: 10
