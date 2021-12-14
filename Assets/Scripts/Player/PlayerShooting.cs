@@ -39,29 +39,32 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeGuns();
-        ChangeWeapons();
-
-        if (Input.GetButton("Fire1") && SelectedGun == PlayerGunType.Weapon)
+        if (!TimeManager.gameIsPaused) // reads inputs only when the game is not paused
         {
-            _selectedWeapon.StartShooting();
-        }
+            ChangeGuns();
+            ChangeWeapons();
 
-        if (Input.GetButtonDown("Fire1") && SelectedGun == PlayerGunType.GrapplingHook)
-        {
-            if (_currentGrapplingHook == null)
+            if (Input.GetButton("Fire1") && SelectedGun == PlayerGunType.Weapon)
             {
-                ShootGrapplingHook();
+                _selectedWeapon.StartShooting();
             }
-            else
-            {
-                DetachGrapplingHook();
-            }
-        }
 
-        if (Input.GetButtonUp("Fire1") && SelectedGun == PlayerGunType.Weapon)
-        {
-            _selectedWeapon.StopShooting();
+            if (Input.GetButtonDown("Fire1") && SelectedGun == PlayerGunType.GrapplingHook)
+            {
+                if (_currentGrapplingHook == null)
+                {
+                    ShootGrapplingHook();
+                }
+                else
+                {
+                    DetachGrapplingHook();
+                }
+            }
+
+            if (Input.GetButtonUp("Fire1") && SelectedGun == PlayerGunType.Weapon)
+            {
+                _selectedWeapon.StopShooting();
+            }
         }
     }
 

@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public GameObject fire;
     public Vector3 mousePos;
 
+    public TimeManager TimeManager;
+
     public ProgressBar FuelBar;
     public float MaxFuelCapacity = 100f;
     public float CurrentFuelLevel = 100f;
@@ -45,16 +47,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FuelBar.SetCurrentProgress((int)CurrentFuelLevel);
+        if (!TimeManager.gameIsPaused) // reads inputs only when the game is not paused
+        {
+            FuelBar.SetCurrentProgress((int)CurrentFuelLevel);
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        // GroundCheck();
-        Movement();
-        Respawn();
-        Jetpack();
-        //Attack();
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            // GroundCheck();
+            Movement();
+            Respawn();
+            Jetpack();
+            //Attack();
+        }
     }
 
     /*private void GroundCheck()

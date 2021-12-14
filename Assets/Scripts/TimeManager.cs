@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
 	public float SlowdownFactor = 0.05f;
+	public bool gameIsPaused = false;
 
 	private float _initialFixedDeltaTime = 0f;
 
@@ -24,4 +25,16 @@ public class TimeManager : MonoBehaviour
 		Time.timeScale = 1;
 		Time.fixedDeltaTime = _initialFixedDeltaTime;
 	}
+
+	public void Pause()
+    {
+		Time.timeScale = 0;
+		gameIsPaused = true;
+    }
+
+	public void Resume()
+    {
+		Time.timeScale = 1;
+		gameIsPaused = false;
+    }
 }
