@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    private GameManager _gameManager;
+
+    public int ResourceBounty = 1;
+
     public int MaxHealth = 100;
     public int CurrentHealth = 100;
     public int regenerationPerSecond = 5;
@@ -21,6 +25,8 @@ public class EnemyManager : MonoBehaviour
         HealthBar.SetMaxProgress(MaxHealth);
         HealthBar.SetCurrentProgress(CurrentHealth);
         Turret.GetComponent<IEnemyWeapon>().StartShooting();
+
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -78,6 +84,8 @@ public class EnemyManager : MonoBehaviour
             StartCoroutine(Regenerate());
 
             Turret.GetComponent<IEnemyWeapon>().StopShooting();
+
+            _gameManager.RecordEnemyKilled(ResourceBounty);
 
             Destroy(Turret, 10f);
 

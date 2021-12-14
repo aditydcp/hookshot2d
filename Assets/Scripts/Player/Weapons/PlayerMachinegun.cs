@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMachinegun : ProjectileWeaponBase
 {
+    public ShopManager ShopManager;
+
     public float BulletSpreadDegrees = 10f;
     public float MaxFiringIntervalVariation = 0.01f;
 
@@ -16,7 +18,10 @@ public class PlayerMachinegun : ProjectileWeaponBase
 
     protected override void Fire()
     {
-        FiringInterval = Random.Range(1f, -1f) * MaxFiringIntervalVariation + _initialFiringInterval;
+        FiringInterval =
+            Random.Range(1f, -1f) * MaxFiringIntervalVariation +
+            _initialFiringInterval -
+            ShopManager.MachinegunFireIntervalDecrease;
 
         var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
 

@@ -9,6 +9,8 @@ public class InGamePauseManager : MonoBehaviour
 
     public TimeManager TimeManager;
 
+    public ShopManager ShopManager;
+
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +30,7 @@ public class InGamePauseManager : MonoBehaviour
     void Resume()
     {
         pauseMenuUI.SetActive(false);
+        ShopManager.CloseShop();
         TimeManager.Resume();
     }
 

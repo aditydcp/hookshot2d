@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerShotgun : ProjectileWeaponBase
 {
+    public ShopManager ShopManager;
+
     public float BulletSpreadDegrees = 15f;
-    public int BulletCount = 2;
+    public int BulletCount = 3;
 
     protected override void Fire()
     {
-        for (int i = 0; i < BulletCount; i++)
+        var bulletCount = BulletCount + ShopManager.ShotgunBulletCountIncrease;
+
+        for (int i = 0; i < bulletCount; i++)
         {
             var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
 
-            var angleBetweenBullets = BulletSpreadDegrees / (BulletCount - 1);
+            var angleBetweenBullets = BulletSpreadDegrees / (bulletCount - 1);
 
             bullet.transform.Rotate(bullet.transform.forward, -BulletSpreadDegrees / 2 + i * angleBetweenBullets);
 

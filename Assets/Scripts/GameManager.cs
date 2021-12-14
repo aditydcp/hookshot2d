@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public ShopManager ShopManager;
+
     public int SecondsSurvived = 0;
 
     public GameObject GameOverOverlay;
     public Text GameScoreText;
 
     private IEnumerator ScoreCounterCoroutine;
-
-    // Player properties
-    int RifleDamage = 10;
-    int ShotgunDamage = 10;
-
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +35,11 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    public void RecordEnemyKilled(int resourceBounty)
+    {
+        ShopManager.AddResource(resourceBounty);
     }
 
     public void GameOver()
