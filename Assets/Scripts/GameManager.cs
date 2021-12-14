@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ScoreCounterCoroutine;
 
+    // Player properties
+    int RifleDamage = 10;
+    int ShotgunDamage = 10;
+
+
     // Start is called before the first frame update
     void Start()
     {

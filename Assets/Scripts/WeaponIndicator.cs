@@ -9,12 +9,12 @@ public class WeaponIndicator : MonoBehaviour
     public Image GrapplingHookImage;
     public Image GunImage;
 
-    private PlayerShooting.PlayerWeapon _previousWeapon;
+    private PlayerShooting.PlayerGunType _previousWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
-        _previousWeapon = PlayerShooting.SelectedWeapon;
+        _previousWeapon = PlayerShooting.SelectedGun;
         HighlightCurrentWeapon();
     }
 
@@ -22,24 +22,24 @@ public class WeaponIndicator : MonoBehaviour
     void Update()
     {
         // On weapon change:
-        if (PlayerShooting.SelectedWeapon != _previousWeapon)
+        if (PlayerShooting.SelectedGun != _previousWeapon)
         {
             UnhighlightAllImages();
 
             HighlightCurrentWeapon();
 
-            _previousWeapon = PlayerShooting.SelectedWeapon;
+            _previousWeapon = PlayerShooting.SelectedGun;
         }
     }
 
     private void HighlightCurrentWeapon()
     {
-        switch (PlayerShooting.SelectedWeapon)
+        switch (PlayerShooting.SelectedGun)
         {
-            case PlayerShooting.PlayerWeapon.Gun:
+            case PlayerShooting.PlayerGunType.Weapon:
                 GunImage.color = Color.blue;
                 return;
-            case PlayerShooting.PlayerWeapon.GrapplingHook:
+            case PlayerShooting.PlayerGunType.GrapplingHook:
                 GrapplingHookImage.color = Color.blue;
                 return;
         }

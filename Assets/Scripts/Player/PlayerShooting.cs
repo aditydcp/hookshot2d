@@ -6,56 +6,66 @@ public class PlayerShooting : MonoBehaviour
 {
     public Transform FiringPoint;
     public Rigidbody2D PlayerRigidbody;
-    public GameObject BulletPrefab;
     public GameObject GrapplingHookPrefab;
 
-    public float BulletForce = 10f;
     public float GrapplingHookForce = 5f;
 
-    public PlayerHook _currentGrapplingHook = null;
-    public PlayerWeapon SelectedWeapon = PlayerWeapon.Gun;
+    private PlayerHook _currentGrapplingHook = null;
+    public PlayerGunType SelectedGun = PlayerGunType.Weapon;
 
     public TimeManager TimeManager;
 
-    public enum PlayerWeapon
+    public PlayerRifle Rifle;
+    public PlayerShotgun Shotgun;
+    public PlayerMachinegun Machinegun;
+
+    private List<IPlayerWeapon> _weaponCycleList;
+    private IPlayerWeapon _selectedWeapon = null;
+    private int _selectedWeaponIndex = 0;
+
+    public enum PlayerGunType
     {
-        Gun,
+        Weapon,
         GrapplingHook
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _weaponCycleList = new List<IPlayerWeapon>() { Rifle, Shotgun, Machinegun };
+        _selectedWeapon = _weaponCycleList[_selectedWeaponIndex];
     }
 
     // Update is called once per frame
     void Update()
     {
+        ChangeGuns();
         ChangeWeapons();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && SelectedGun == PlayerGunType.Weapon)
         {
-            switch (SelectedWeapon)
+            _selectedWeapon.StartShooting();
+        }
+
+        if (Input.GetButtonDown("Fire1") && SelectedGun == PlayerGunType.GrapplingHook)
+        {
+            if (_currentGrapplingHook == null)
             {
-                case PlayerWeapon.Gun:
-                    Shoot();
-                    return;
-                case PlayerWeapon.GrapplingHook:
-                    if (_currentGrapplingHook == null)
-                    {
-                        ShootGrapplingHook();
-                    }
-                    else
-                    {
-                        DetachGrapplingHook();
-                    }
-                    return;
+                ShootGrapplingHook();
             }
+            else
+            {
+                DetachGrapplingHook();
+            }
+        }
+
+        if (Input.GetButtonUp("Fire1") && SelectedGun == PlayerGunType.Weapon)
+        {
+            _selectedWeapon.StopShooting();
         }
     }
 
-    private void ChangeWeapons()
+    private void ChangeGuns()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -64,20 +74,37 @@ public class PlayerShooting : MonoBehaviour
                 DetachGrapplingHook();
             }
 
-            SelectedWeapon = PlayerWeapon.Gun;
+            SelectedGun = PlayerGunType.Weapon;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SelectedWeapon = PlayerWeapon.GrapplingHook;
+            SelectedGun = PlayerGunType.GrapplingHook;
         }
 
-        if (SelectedWeapon == PlayerWeapon.Gun)
+        if (SelectedGun == PlayerGunType.Weapon)
         {
             TimeManager.EnableSlowmotion();
         }
         else
         {
+            _selectedWeapon.StopShooting();
             TimeManager.DisableSlowmotion();
+        }
+    }
+
+    private void ChangeWeapons()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _selectedWeapon.StopShooting();
+
+            _selectedWeaponIndex++;
+            if (_selectedWeaponIndex > _weaponCycleList.Count - 1)
+            {
+                _selectedWeaponIndex = 0;
+            }
+
+            _selectedWeapon = _weaponCycleList[_selectedWeaponIndex];
         }
     }
 
@@ -97,14 +124,5 @@ public class PlayerShooting : MonoBehaviour
         _currentGrapplingHook.Detach();
 
         _currentGrapplingHook = null;
-    }
-
-    void Shoot()
-    {
-        var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
-
-        var bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-
-        bulletRigidbody.AddForce(FiringPoint.up * BulletForce, ForceMode2D.Impulse);
     }
 }
