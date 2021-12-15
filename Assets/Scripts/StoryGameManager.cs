@@ -23,7 +23,9 @@ public class StoryGameManager : GameManagerBase
         if (_player.transform.position.y > 325)
         {
             BossEnemyManager.ActivateBoss();
-        }   
+        }
+
+        LowerVolumeOnPause();
     }
 
     public override void RecordEnemyKilled(int resourceBounty)

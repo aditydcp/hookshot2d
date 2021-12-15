@@ -647,9 +647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24300002, guid: 52d934caac602b942a524e7167623b88, type: 2}
   sounds:
-  - name: MainTheme
+  - name: MenuTheme
     clip: {fileID: 8300000, guid: 1ad949224241f2449881f32aab61a095, type: 3}
-    volume: 0.228
+    volume: 0.277
     pitch: 1
     loop: 1
     source: {fileID: 0}
