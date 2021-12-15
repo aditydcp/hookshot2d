@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+
     // this function will be called when EndlessButton is clicked
     public void PlayEndlessMode()
     {
