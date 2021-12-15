@@ -10,7 +10,7 @@ public class PlayerHook : MonoBehaviour
     private Rigidbody2D _attachedRigidbody = null;
     private Transform _attachmentPoint;
     private bool _isPulling = false;
-    private LineRenderer _lineRenderer;
+    public LineRenderer LineRenderer;
 
     private GameObject _attachedObject;
 
@@ -46,7 +46,7 @@ public class PlayerHook : MonoBehaviour
             Vector2 hookPosition = transform.position;
             Vector2 attacheePosition = _attachedRigidbody.position;
 
-            _lineRenderer.SetPositions(new Vector3[] { hookPosition, _attachmentPoint.position });
+            LineRenderer.SetPositions(new Vector3[] { hookPosition, _attachmentPoint.position });
 
             var pullDirection = (hookPosition - attacheePosition).normalized;
 
@@ -58,12 +58,6 @@ public class PlayerHook : MonoBehaviour
     {
         _attachedRigidbody = rigidbody;
         _attachmentPoint = attachmentPoint;
-
-        _lineRenderer = gameObject.AddComponent<LineRenderer>();
-        _lineRenderer.startWidth = 0.05f;
-        _lineRenderer.endWidth = 0.05f;
-        _lineRenderer.material.color = Color.black;
-        _lineRenderer.positionCount = 2;
     }
 
     public void Detach()
@@ -71,7 +65,7 @@ public class PlayerHook : MonoBehaviour
         _isPulling = false;
         _attachedRigidbody = null;
 
-        _lineRenderer.enabled = false;
+        LineRenderer.enabled = false;
 
         Rigidbody.constraints = RigidbodyConstraints2D.None;
 
