@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             verticalInput = Input.GetAxis("Vertical");
             // GroundCheck();
             Movement();
-            Respawn();
+            ResetPosition();
             Jetpack();
             //Attack();
         }
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Respawn()
+    private void ResetPosition()
     {
         if(transform.position.y < -10)
         {

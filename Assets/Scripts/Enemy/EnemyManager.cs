@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : EnemyManagerBase
 {
     private GameManager _gameManager;
 
     public int ResourceBounty = 1;
 
-    public int MaxHealth = 100;
-    public int CurrentHealth = 100;
     public int regenerationPerSecond = 5;
 
     public ProgressBar HealthBar;
@@ -32,7 +30,17 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Turret)
+        {
+            if (PlayerIsInRange())
+            {
+                Turret.GetComponent<IEnemyWeapon>().StartShooting();
+            }
+            else
+            {
+                Turret.GetComponent<IEnemyWeapon>().StopShooting();
+            }
+        }
     }
 
     private IEnumerator Regenerate()
@@ -65,7 +73,7 @@ public class EnemyManager : MonoBehaviour
         Turret.transform.localPosition = new Vector2(0.01f, -0.87f);
     }
 
-    public void TakeDamage(int damageAmount)
+    public override void TakeDamage(int damageAmount)
     {
         if (CurrentHealth - damageAmount > 0)
         {

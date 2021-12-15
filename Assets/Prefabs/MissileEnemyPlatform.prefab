@@ -292,7 +292,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2031636917538468101}
   m_FillRect: {fileID: 2031636917289788522}
   m_HandleRect: {fileID: 0}
@@ -417,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   CurrentHealth: 100
+  Range: 30
+  ResourceBounty: 1
   regenerationPerSecond: 5
   HealthBar: {fileID: 2031636917538468103}
   Turret: {fileID: 2031636916766975855}

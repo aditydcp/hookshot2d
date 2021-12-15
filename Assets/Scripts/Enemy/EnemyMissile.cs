@@ -38,7 +38,7 @@ public class EnemyMissile : MonoBehaviour
 
         if (player != null)
         {
-            player.TakeDamage(10);
+            player.TakeDamage(3);
 
             Destroy(gameObject);
         }

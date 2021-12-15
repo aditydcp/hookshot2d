@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public ShopManager ShopManager;
+    public TimeManager TimeManager;
 
     public int SecondsSurvived = 0;
 
@@ -14,17 +16,25 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ScoreCounterCoroutine;
 
+    private GameObject _player;
+    public BossEnemyManager BossEnemyManager;
+
     // Start is called before the first frame update
     void Start()
     {
         ScoreCounterCoroutine = CountScore();
         StartCoroutine(ScoreCounterCoroutine);
+
+        _player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (_player.transform.position.y > 325)
+        {
+            BossEnemyManager.ActivateBoss();
+        }   
     }
 
     IEnumerator CountScore()
@@ -46,6 +56,11 @@ public class GameManager : MonoBehaviour
     {
         StopCoroutine(ScoreCounterCoroutine);
         GameOverOverlay.SetActive(true);
-        GameScoreText.text = $"Congratulations, you've managed to survive for {SecondsSurvived} seconds!";
+        TimeManager.Pause();
+    }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

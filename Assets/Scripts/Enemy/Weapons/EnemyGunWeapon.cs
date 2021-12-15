@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGunWeapon : MonoBehaviour, IEnemyWeapon
+public class EnemyGunWeapon : MonoBehaviour, IEnemyProjectileWeapon
 {
     public bool IsShooting { get; private set; }
 
@@ -45,13 +45,18 @@ public class EnemyGunWeapon : MonoBehaviour, IEnemyWeapon
 
         while(true)
         {
-            var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
-
-            var bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-
-            bulletRigidbody.AddForce(FiringPoint.up * BulletForce, ForceMode2D.Impulse);
+            FireOnce();
 
             yield return new WaitForSeconds(MinShootingInterval + Random.Range(0f, ShootingIntervalVariation));
         }
+    }
+
+    public void FireOnce()
+    {
+        var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
+
+        var bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+
+        bulletRigidbody.AddForce(FiringPoint.up * BulletForce, ForceMode2D.Impulse);
     }
 }

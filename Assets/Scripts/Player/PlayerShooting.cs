@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerShooting : MonoBehaviour
     public PlayerRifle Rifle;
     public PlayerShotgun Shotgun;
     public PlayerMachinegun Machinegun;
+
+    public Text PlayerWeaponIndicator;
 
     private List<IPlayerWeapon> _weaponCycleList;
     private IPlayerWeapon _selectedWeapon = null;
@@ -105,6 +108,22 @@ public class PlayerShooting : MonoBehaviour
             if (_selectedWeaponIndex > _weaponCycleList.Count - 1)
             {
                 _selectedWeaponIndex = 0;
+            }
+
+            switch(_selectedWeaponIndex)
+            {
+                case 0:
+                    PlayerWeaponIndicator.text = "Rifle";
+                    break;
+                case 1:
+                    PlayerWeaponIndicator.text = "Shotgun";
+                    break;
+                case 2:
+                    PlayerWeaponIndicator.text = "Machinegun";
+                    break;
+                default:
+                    PlayerWeaponIndicator.text = "Unidentified";
+                    break;
             }
 
             _selectedWeapon = _weaponCycleList[_selectedWeaponIndex];

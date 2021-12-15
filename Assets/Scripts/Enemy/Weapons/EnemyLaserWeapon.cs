@@ -16,19 +16,22 @@ public class EnemyLaserWeapon : MonoBehaviour, IEnemyWeapon
 
     public void StartShooting()
     {
-        IsShooting = true;
+        if (!IsShooting)
+        {
+            IsShooting = true;
 
-        _damageDealingCoroutine = DealDamage();
+            _damageDealingCoroutine = DealDamage();
 
-        StartCoroutine(_damageDealingCoroutine);
+            StartCoroutine(_damageDealingCoroutine);
+        }
     }
 
     public void StopShooting()
     {
-        IsShooting = false;
-
-        if (_damageDealingCoroutine != null)
+        if (IsShooting)
         {
+            IsShooting = false;
+
             StopCoroutine(_damageDealingCoroutine);
 
             _damageDealingCoroutine = null;
@@ -39,6 +42,7 @@ public class EnemyLaserWeapon : MonoBehaviour, IEnemyWeapon
     {
         if (IsShooting)
         {
+            LineRenderer.enabled = true;
             DrawLaser();
         }
         else

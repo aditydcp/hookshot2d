@@ -15,7 +15,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var enemy = collision.gameObject.GetComponent<EnemyManager>();
+        var enemy = collision.gameObject.GetComponent<EnemyManagerBase>();
 
         if (enemy != null)
         {
