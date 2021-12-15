@@ -11,7 +11,7 @@ Controls :
 * `A` Move to the left.
 * `D` Move to the right.
 * `Space` Use jetpack.
-* `1` Switch to weapons mode.
+* `1` Switch to weapons mode. (This enables slow-motion mode to help with aiming)
   * `Left click (Hold)` Fire weapons.
   * `Q` Cycle through weapons (order: rifle -> shotgun -> machinegun -> back to rifle).
 * `2` Switch to grappling hook mode.
