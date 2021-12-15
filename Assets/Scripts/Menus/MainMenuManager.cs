@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PlayStoryMode()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("PrologueScene");
     }
 
     // this function will be called when EndlessButton is clicked
