@@ -58,5 +58,7 @@ public class EnemyGunWeapon : MonoBehaviour, IEnemyProjectileWeapon
         var bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
         bulletRigidbody.AddForce(FiringPoint.up * BulletForce, ForceMode2D.Impulse);
+
+        FindObjectOfType<AudioManager>().Play("EnemyFire");
     }
 }

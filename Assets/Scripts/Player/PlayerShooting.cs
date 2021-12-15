@@ -16,6 +16,8 @@ public class PlayerShooting : MonoBehaviour
 
     public TimeManager TimeManager;
 
+    public AudioManager AudioManager;
+
     public PlayerRifle Rifle;
     public PlayerShotgun Shotgun;
     public PlayerMachinegun Machinegun;
@@ -51,12 +53,17 @@ public class PlayerShooting : MonoBehaviour
             {
                 _selectedWeapon.StartShooting();
             }
+            if (Input.GetButtonDown("Fire1") && SelectedGun == PlayerGunType.Weapon)
+            {
+                AudioManager.Play("Fire");
+            }
 
             if (Input.GetButtonDown("Fire1") && SelectedGun == PlayerGunType.GrapplingHook)
             {
                 if (_currentGrapplingHook == null)
                 {
                     ShootGrapplingHook();
+                    AudioManager.Play("GrapplingHook");
                 }
                 else
                 {

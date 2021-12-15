@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public TimeManager TimeManager;
 
+    public AudioManager AudioManager;
+
     public ProgressBar FuelBar;
     public float MaxFuelCapacity = 100f;
     public float CurrentFuelLevel = 100f;
@@ -87,9 +89,15 @@ public class PlayerController : MonoBehaviour
 
             FireJetpack();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AudioManager.Play("Jetpack");
+        }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            AudioManager.Stop("Jetpack");
+
             _refuelCooldown = RefuelCooldown();
             StartCoroutine(_refuelCooldown);
         }
