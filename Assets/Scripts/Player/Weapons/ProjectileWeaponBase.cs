@@ -8,6 +8,8 @@ public abstract class ProjectileWeaponBase : MonoBehaviour, IPlayerWeapon
     public float FiringInterval = 1f;
     public float BulletForce = 10f;
 
+    public AudioManager AudioManager;
+
     public Transform FiringPoint;
     public GameObject BulletPrefab;
 

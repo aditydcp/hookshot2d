@@ -8,6 +8,8 @@ public class PlayerRifle : ProjectileWeaponBase, IPlayerWeapon
 
     protected override void Fire()
     {
+        AudioManager.Play("Fire");
+
         var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
 
         bullet.GetComponent<PlayerBullet>().Damage += ShopManager.RifleDamageIncrease;

@@ -15,6 +15,8 @@ public class PlayerShotgun : ProjectileWeaponBase
 
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.Play("Fire");
+
             var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
 
             var angleBetweenBullets = BulletSpreadDegrees / (bulletCount - 1);

@@ -23,6 +23,8 @@ public class PlayerMachinegun : ProjectileWeaponBase
             _initialFiringInterval -
             ShopManager.MachinegunFireIntervalDecrease;
 
+        AudioManager.Play("Fire");
+
         var bullet = Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
 
         bullet.transform.Rotate(bullet.transform.forward, Random.Range(-BulletSpreadDegrees, BulletSpreadDegrees));
