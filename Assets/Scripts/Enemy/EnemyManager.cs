@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : EnemyManagerBase
 {
-    private GameManager _gameManager;
+    private GameManagerBase _gameManager;
 
     public int ResourceBounty = 1;
 
@@ -24,7 +24,7 @@ public class EnemyManager : EnemyManagerBase
         HealthBar.SetCurrentProgress(CurrentHealth);
         Turret.GetComponent<IEnemyWeapon>().StartShooting();
 
-        _gameManager = FindObjectOfType<GameManager>();
+        _gameManager = FindObjectOfType<GameManagerBase>();
     }
 
     // Update is called once per frame

@@ -19,7 +19,7 @@ public class ShopManager : MonoBehaviour
     public int RifleDamageIncrease;
     public Upgrade RifleDamageUpgrade = new Upgrade()
     {
-        ResourceCost = 100,
+        ResourceCost = 10,
         CurrentLevel = 0,
         MaxLevel = 10
     };
@@ -27,7 +27,7 @@ public class ShopManager : MonoBehaviour
     public int ShotgunBulletCountIncrease;
     public Upgrade ShotgunPelletCountUpgrade = new Upgrade()
     {
-        ResourceCost = 150,
+        ResourceCost = 15,
         CurrentLevel = 0,
         MaxLevel = 6
     };
@@ -35,9 +35,9 @@ public class ShopManager : MonoBehaviour
     public float MachinegunFireIntervalDecrease;
     public Upgrade MachineGunFirerateUpgrade = new Upgrade()
     {
-        ResourceCost = 200,
+        ResourceCost = 20,
         CurrentLevel = 0,
-        MaxLevel = 10
+        MaxLevel = 5
     };
 
     public void AddResource(int amount)

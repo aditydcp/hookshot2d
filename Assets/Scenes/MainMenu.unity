@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005f1c563bc14f34daf5b5045c7d6c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24300002, guid: 52d934caac602b942a524e7167623b88, type: 2}
   sounds:
   - name: MainTheme
     clip: {fileID: 8300000, guid: 1ad949224241f2449881f32aab61a095, type: 3}
@@ -652,7 +653,6 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  audioMixer: {fileID: 24300002, guid: 52d934caac602b942a524e7167623b88, type: 2}
 --- !u!4 &313721911
 Transform:
   m_ObjectHideFlags: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 618089471}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: PlayEndlessMode
+        m_MethodName: PlayStoryMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

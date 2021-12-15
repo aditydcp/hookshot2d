@@ -176,7 +176,7 @@ MonoBehaviour:
   MaxHealth: 100
   CurrentHealth: 100
   Range: 30
-  ResourceBounty: 1
+  ResourceBounty: 3
   regenerationPerSecond: 5
   HealthBar: {fileID: 3887961181903681887}
   Turret: {fileID: 2472870176546654022}

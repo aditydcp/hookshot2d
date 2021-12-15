@@ -4,17 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class StoryGameManager : GameManagerBase
 {
-    public ShopManager ShopManager;
-    public TimeManager TimeManager;
-
-    public int SecondsSurvived = 0;
-
     public GameObject GameOverOverlay;
-    public Text GameScoreText;
-
-    private IEnumerator ScoreCounterCoroutine;
 
     private GameObject _player;
     public BossEnemyManager BossEnemyManager;
@@ -22,9 +14,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreCounterCoroutine = CountScore();
-        StartCoroutine(ScoreCounterCoroutine);
-
         _player = GameObject.Find("Player");
     }
 
@@ -37,24 +26,13 @@ public class GameManager : MonoBehaviour
         }   
     }
 
-    IEnumerator CountScore()
-    {
-        while (true)
-        {
-            SecondsSurvived += 1;
-
-            yield return new WaitForSeconds(1f);
-        }
-    }
-
-    public void RecordEnemyKilled(int resourceBounty)
+    public override void RecordEnemyKilled(int resourceBounty)
     {
         ShopManager.AddResource(resourceBounty);
     }
 
-    public void GameOver()
+    public override void GameOver()
     {
-        StopCoroutine(ScoreCounterCoroutine);
         GameOverOverlay.SetActive(true);
         TimeManager.Pause();
     }

@@ -12,6 +12,8 @@ public class PlayerHook : MonoBehaviour
     private bool _isPulling = false;
     private LineRenderer _lineRenderer;
 
+    private GameObject _attachedObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class PlayerHook : MonoBehaviour
         {
             Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
+            _attachedObject = collision.gameObject;
+
             _isPulling = true;
         }
     }
@@ -31,6 +35,12 @@ public class PlayerHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_isPulling && _attachedObject == null)
+        {
+            Detach();
+            return;
+        }
+
         if (_isPulling && _attachedRigidbody != null)
         {
             Vector2 hookPosition = transform.position;

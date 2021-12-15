@@ -9,13 +9,15 @@ public class PlayerManager : MonoBehaviour
     public int RegenerationPerSecond = 3;
     public ProgressBar HealthBar;
 
-    public GameManager GameManager;
+    public GameManagerBase GameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         HealthBar.SetMaxProgress(MaxHealth);
         HealthBar.SetCurrentProgress(CurrentHealth);
+
+        GameManager = FindObjectOfType<GameManagerBase>();
 
         StartCoroutine(Regenerate());
     }

@@ -147,8 +147,9 @@ public class PlayerController : MonoBehaviour
 
     private void ResetPosition()
     {
-        if(transform.position.y < -10)
+        if(transform.position.y < -300f)
         {
+            m_Rigidbody2D.velocity = new Vector2(0, 0);
             transform.position = new Vector2(0, 0);
         }
     }
