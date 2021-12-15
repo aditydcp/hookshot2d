@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEnemyManager : EnemyManagerBase
 {
@@ -167,6 +168,8 @@ public class BossEnemyManager : EnemyManagerBase
         {
             BossHealthBar.SetActive(false);
             Debug.Log("Boss dead.");
+
+            SceneManager.LoadScene("EpilogueScene");
         }
     }
 }
