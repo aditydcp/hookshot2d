@@ -6,7 +6,7 @@ Team members:
 * Firdaus Bisma Suryakusuma		(19/444051/TK/49247)
 * Kisbayu Kresna Adji			(19/444056/TK/49252)
 
-# How to Play
+## How to Play
 Controls :
 * `A` Move to the left.
 * `D` Move to the right.
@@ -18,6 +18,6 @@ Controls :
   * `Left click (Press)` Fire/release grappling hook.
 * `Escape` Pause/open shop.
 
-# Objectives
+## Game Modes & Objectives
 * Story mode : Climb as high as possible and defeat ATLAS (Atlas’ Top-tier & Legendary Anti-clae System).
 * Endless mode : Survive for as long as possible and earn a high score. Level layout changes every couple of seconds to spice things up.
