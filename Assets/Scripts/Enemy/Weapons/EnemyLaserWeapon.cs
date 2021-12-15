@@ -23,6 +23,8 @@ public class EnemyLaserWeapon : MonoBehaviour, IEnemyWeapon
             _damageDealingCoroutine = DealDamage();
 
             StartCoroutine(_damageDealingCoroutine);
+
+            FindObjectOfType<AudioManager>().Play("EnemyLaserFire");
         }
     }
 
@@ -35,6 +37,8 @@ public class EnemyLaserWeapon : MonoBehaviour, IEnemyWeapon
             StopCoroutine(_damageDealingCoroutine);
 
             _damageDealingCoroutine = null;
+
+            FindObjectOfType<AudioManager>().Stop("EnemyLaserFire");
         }
     }
 

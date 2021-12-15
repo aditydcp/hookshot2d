@@ -50,6 +50,16 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+    public void Play(string name, int interval)
+    {
+        Sound s = FindSound(name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.PlayDelayed(interval);
+    }
 
     public void Stop(string name)
     {

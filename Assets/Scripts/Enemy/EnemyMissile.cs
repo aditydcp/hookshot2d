@@ -5,17 +5,19 @@ using UnityEngine;
 public class EnemyMissile : MonoBehaviour
 {
     private Transform _target = null;
-
+    
     public float Speed = 10f;
     public float RotationSpeed = 5f;
     public Rigidbody2D MissileRigidBody;
     public int SelfDestructDelaySeconds = 5;
 
-
     void Start()
     {
         AcquireTarget();
         Destroy(gameObject, SelfDestructDelaySeconds);
+
+        FindObjectOfType<AudioManager>().Play("EnemyMissileFire");
+        // FindObjectOfType<AudioManager>().Play("Explosion", SelfDestructDelaySeconds);
     }
 
     void FixedUpdate()
@@ -41,6 +43,8 @@ public class EnemyMissile : MonoBehaviour
             player.TakeDamage(3);
 
             Destroy(gameObject);
+
+            FindObjectOfType<AudioManager>().Play("Explosion");
         }
     }
 
