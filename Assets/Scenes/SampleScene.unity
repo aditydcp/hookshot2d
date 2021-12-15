@@ -19184,7 +19184,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1493523630
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
