@@ -1,6 +1,8 @@
 # Hookshot2D
 Game Development Final Project Assignment. Team: "AFK Studios".
 
+[[Download Executable](https://drive.google.com/drive/folders/1QdIuF2b0EeKyosPzjwg88BSRDv-2t6MX?usp=sharing)] [[Demo Video](https://youtu.be/C-fQIFLxfhI)]
+
 Team members:
 * Aditya Dwi Cahyo Putra		(19/444035/TK/49231)
 * Firdaus Bisma Suryakusuma		(19/444051/TK/49247)
